@@ -1,0 +1,23 @@
+{
+	"name": "iSearchSac",
+	"description": "Search widget with autocompletion",
+	"eula": "",
+	"vendor": "iProsis",
+	"license": "",
+	"id": "com.sap.sample.isearchsac1",
+	"newInstancePrefix": "IsearchSac1",
+	"version": "0.0.1",
+	"icon": "",
+	"webcomponents": [
+		{
+			"kind": "main",
+			"tag": "com-sap-sample-isearchsac1",
+			"url": "https://iprosis-web.github.io/iSearchSac/webcomponent.js",
+			"integrity": "",
+			"ignoreIntegrity": true
+		}
+	],
+	"properties": {},
+	"methods": {},
+	"events": {}
+}
