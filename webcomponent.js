@@ -48,7 +48,7 @@
         `;
 
 	window.customElements.define(
-		'i-com-sap-sample-isearchsac1',
+		'com-sap-sample-isearchsac1',
 		class ISearch extends HTMLElement {
 			constructor() {
 				debugger;
