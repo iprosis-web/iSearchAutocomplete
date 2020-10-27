@@ -1,34 +1,6 @@
 (function () {
-	class ISearch extends HTMLElement {
-		fullArray = [
-			'Ierger',
-			'Kwefwqf',
-			'Itwfwre',
-			'Hwefwqf',
-			'Lwfw',
-			'Lwgfver',
-			'Oqfqaf',
-			'Iqwerfqarf',
-			'Hqaevgq',
-			'Hqakhjgfjhg',
-		];
-		constructor() {
-			super();
-			let that = this;
-			this.fullArray = [
-				'Ierger',
-				'Kwefwqf',
-				'Itwfwre',
-				'Hwefwqf',
-				'Lwfw',
-				'Lwgfver',
-				'Oqfqaf',
-				'Iqwerfqarf',
-				'Hqaevgq',
-				'Hqakhjgfjhg',
-			];
-			const template = document.createElement('template');
-			template.innerHTML = `
+	const template = document.createElement('template');
+	template.innerHTML = `
             <div class="container">
                 <input type="text" class="inputSearch" placeholder="Start typing..." >
             </div>
@@ -74,58 +46,78 @@
                 }   
             </style>
         `;
-			const onSearchInput = function () {
-				let itemsArray = that.fullArray; // that === ISearch
-				let item = this.value; // t5his === input
-				that.onSearchInput(item, itemsArray);
-			};
 
-			let shadowRoot = this.attachShadow({ mode: 'open' });
-			shadowRoot.appendChild(template.content.cloneNode(true));
-			shadowRoot.querySelector('.inputSearch').oninput = onSearchInput;
-			this.reBuildItemsTable(['Ierger', 'Kwefwqf', 'Itwfwre']);
-		}
+	window.customElements.define(
+		'i-com-sap-sample-isearchsac1',
+		class ISearch extends HTMLElement {
+			constructor() {
+				super();
+				let that = this;
+				this.fullArray = [
+					'Ierger',
+					'Kwefwqf',
+					'Itwfwre',
+					'Hwefwqf',
+					'Lwfw',
+					'Lwgfver',
+					'Oqfqaf',
+					'Iqwerfqarf',
+					'Hqaevgq',
+					'Hqakhjgfjhg',
+				];
+				const onSearchInput = function () {
+					let itemsArray = that.fullArray; // that === ISearch
+					let item = this.value; // t5his === input
+					that.onSearchInput(item, itemsArray);
+				};
 
-		reBuildItemsTable(items) {
-			let that = this;
-			let table = this.shadowRoot.querySelector('.itemsTable');
-			if (table) {
-				table.parentNode.removeChild(table);
+				let shadowRoot = this.attachShadow({ mode: 'open' });
+				shadowRoot.appendChild(template.content.cloneNode(true));
+				shadowRoot.querySelector('.inputSearch').oninput = onSearchInput;
+				this.reBuildItemsTable(['Ierger', 'Kwefwqf', 'Itwfwre']);
 			}
-			table = document.createElement('TABLE');
-			table.classList.add('itemsTable');
-			this.shadowRoot.querySelector('.container').appendChild(table);
 
-			// callback on choosen item
-			const onChooseItem = function () {
-				// that === ISearch
-				// this === clicked cedll (td)
-				that.shadowRoot.querySelector('.inputSearch').value = this.innerText;
-				that.reBuildItemsTable([]);
-			};
-
-			items.forEach((element) => {
-				let row = document.createElement('TR');
-				let cell = document.createElement('TD');
-				let span = document.createElement('SPAN');
-				span.innerText = element;
-				cell.appendChild(span);
-				row.appendChild(cell);
-				table.appendChild(row);
-				cell.onclick = onChooseItem;
-			});
-		}
-
-		onSearchInput(item, itemsArray) {
-			let matchItems = [];
-			itemsArray.forEach((element) => {
-				if (item && element.startsWith(item)) {
-					matchItems.push(element);
+			reBuildItemsTable(items) {
+				let that = this;
+				let table = this.shadowRoot.querySelector('.itemsTable');
+				if (table) {
+					table.parentNode.removeChild(table);
 				}
-			});
-			this.reBuildItemsTable(matchItems);
-		}
-	}
+				table = document.createElement('TABLE');
+				table.classList.add('itemsTable');
+				this.shadowRoot.querySelector('.container').appendChild(table);
 
-	window.customElements.define('i-com-sap-sample-isearchsac1', ISearch);
+				// callback on choosen item
+				const onChooseItem = function () {
+					// that === ISearch
+					// this === clicked cedll (td)
+					that.shadowRoot.querySelector('.inputSearch').value = this.innerText;
+					that.reBuildItemsTable([]);
+				};
+
+				items.forEach((element) => {
+					let row = document.createElement('TR');
+					let cell = document.createElement('TD');
+					let span = document.createElement('SPAN');
+					span.innerText = element;
+					cell.appendChild(span);
+					row.appendChild(cell);
+					table.appendChild(row);
+					cell.onclick = onChooseItem;
+				});
+			}
+
+			onSearchInput(item, itemsArray) {
+				let matchItems = [];
+				itemsArray.forEach((element) => {
+					if (item && element.startsWith(item)) {
+						matchItems.push(element);
+					}
+				});
+				this.reBuildItemsTable(matchItems);
+			}
+		}
+	);
+
+	//window.customElements.define('i-com-sap-sample-isearchsac1', ISearch);
 })();
