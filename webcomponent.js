@@ -51,6 +51,8 @@
 		'i-com-sap-sample-isearchsac1',
 		class ISearch extends HTMLElement {
 			constructor() {
+				debugger;
+
 				super();
 				let that = this;
 				this.fullArray = [
