@@ -127,5 +127,5 @@
 		}
 	}
 
-	window.customElements.define('i-search', ISearch);
+	window.customElements.define('i-com-sap-sample-isearchsac1', ISearch);
 })();
