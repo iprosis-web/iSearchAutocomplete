@@ -33,7 +33,7 @@
 	},
 	"events": {
 		"onChooseItem": {
-			"descrption": "Called when user choose new item in the widget"
+			"description": "Called when user choose new item in the widget"
 		}
 	}
 }
