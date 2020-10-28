@@ -6,7 +6,7 @@
             </div>
             <style>
                 .container {
-                    width: 200px
+                    width: 100%;
                 }
 
                 .inputSearch {
