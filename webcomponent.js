@@ -77,6 +77,12 @@
 				this.reBuildItemsTable([]);
 			}
 
+			//Getters and Setters
+
+			get choosenItem() {
+				return this._choosenItem;
+			}
+
 			reBuildItemsTable(items) {
 				let that = this;
 				let table = this.shadowRoot.querySelector('.itemsTable');
@@ -93,6 +99,13 @@
 					// this === clicked cedll (td)
 					that.shadowRoot.querySelector('.inputSearch').value = this.innerText;
 					that.reBuildItemsTable([]);
+
+					// Update property
+					that._choosenItem = this.innerText;
+
+					// Send event to be used by external framework
+					let event = new Event('onChooseItem');
+					that.dispatchEvent(event);	
 				};
 
 				items.forEach((element) => {

@@ -17,7 +17,23 @@
 			"ignoreIntegrity": true
 		}
 	],
-	"properties": {},
-	"methods": {},
-	"events": {}
+	"properties": {
+		"choosenItem": {
+			"type": "string",
+			"description": "The item choosen from the search widget",
+			"default": ""
+		}		
+	},
+	"methods": {
+		"getChoosenItem": {
+			"description": "Returns the item choosen from the search widget",
+			"body": "return this.choosenItem;",
+			"returnType": "string"
+		}
+	},
+	"events": {
+		"onChooseItem": {
+			"descrption": "Called when user choose new item in the widget"
+		}
+	}
 }
