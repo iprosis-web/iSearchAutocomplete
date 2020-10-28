@@ -17,23 +17,19 @@
 			"ignoreIntegrity": true
 		}
 	],
-	"properties": {
-		"choosenItem": {
-			"type": "string",
-			"description": "The item choosen from the search widget",
-			"default": "heyyy"
-		}		
+	"properties": {	
 	},
+
 	"methods": {
 		"getChoosenItem": {
 			"description": "Returns the item choosen from the search widget",
 			"returnType": "string"
 		},
-		"setChoosenItem": {
-			"description": "Sets  the item choosento XXXXXXX",
-			"body": "this.choosenItem = 'XXXXXXX';"
-		}
-		
+
+		"setItems": {
+			"description": "set items list to the widget",
+			"returnType": "string[]"
+		}	
 	},
 	"events": {
 		"onChooseItem": {

@@ -15,7 +15,7 @@
                     font-size: 16px;
                     border: 1px solid rgb(204, 211, 219);
                     border-radius: 5px;
-					margin-bottom: 2px;
+					margin-bottom: -1px;
 					box-sizing: border-box;
                 }
 
@@ -32,7 +32,7 @@
                 }
 
                 .itemsTable td {
-                    border: solid 1px #aaa;
+                    border: solid 1px rgb(204, 211, 219);
                     padding-top: 8px;
                     padding-bottom: 8px;
                 }
@@ -146,6 +146,10 @@
 
 			getChoosenItem() {
 				return this._choosenItem;
+			}
+
+			setItems(items) {
+				this.fullArray = items;
 			}
 
 			get choosenItem() {
