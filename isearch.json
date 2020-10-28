@@ -21,7 +21,7 @@
 		"choosenItem": {
 			"type": "string",
 			"description": "The item choosen from the search widget",
-			"default": ""
+			"default": "heyyy"
 		}		
 	},
 	"methods": {
