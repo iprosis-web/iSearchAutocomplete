@@ -80,6 +80,7 @@
 			//Getters and Setters
 
 			get choosenItem() {
+				debugger;
 				return this._choosenItem;
 			}
 
