@@ -15,7 +15,8 @@
                     font-size: 16px;
                     border: 1px solid rgb(204, 211, 219);
                     border-radius: 5px;
-                    margin-bottom: 2px;
+					margin-bottom: 2px;
+					box-sizing: border-box;
                 }
 
                 .inputSearch:focus {
