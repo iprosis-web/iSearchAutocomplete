@@ -1,71 +1,59 @@
 (function () {
 	const template = document.createElement('template');
 	template.innerHTML = `
-            <div class="container">
-                <input type="text" class="inputSearch" placeholder="Start typing..." >
-            </div>
-            <style>
-                .container {
-                    width: 100%;
-                }
+		<div class="container">
+			<input type="text" class="inputSearch" placeholder="Start typing..." >
+		</div>
+		<style>
+			.container {
+				width: 100%;
+			}
 
-                .inputSearch {
-                    width: 100%;
-                    padding: 10px;
-                    font-size: 16px;
-                    border: 1px solid rgb(204, 211, 219);
-                    border-radius: 5px;
-					margin-bottom: -1px;
-					box-sizing: border-box;
-                }
+			.inputSearch {
+				width: 100%;
+				padding: 10px;
+				font-size: 16px;
+				border: 1px solid rgb(204, 211, 219);
+				border-radius: 5px;
+				margin-bottom: -1px;
+				box-sizing: border-box;
+			}
 
-                .inputSearch:focus {
-                    border: 2px solid rgb(204, 211, 219);;
-                    outline: none;
-                }
+			.inputSearch:focus {
+				border: 2px solid rgb(204, 211, 219);;
+				outline: none;
+			}
 
-                .itemsTable {
-                    width: 100%;
-                    font: 16px Arial;   
-                    border: 1px solid black;
-                    border-collapse: collapse;
-                }
+			.itemsTable {
+				width: 100%;
+				font: 16px Arial;   
+				border: 1px solid black;
+				border-collapse: collapse;
+			}
 
-                .itemsTable td {
-                    border: solid 1px rgb(204, 211, 219);
-                    padding-top: 8px;
-                    padding-bottom: 8px;
-                }
+			.itemsTable td {
+				border: solid 1px rgb(204, 211, 219);
+				padding-top: 8px;
+				padding-bottom: 8px;
+			}
 
-                .itemsTable td:hover {
-                    background-color: #e9e9e9; 
-                }
+			.itemsTable td:hover {
+				background-color: #e9e9e9; 
+			}
 
-                .itemsTable span {
+			.itemsTable span {
 
-                    margin: 0.5rem;
-                }   
-            </style>
-        `;
-
+				margin: 0.5rem;
+			}   
+		</style>
+    `;
 	window.customElements.define(
 		'com-sap-sample-isearchsac1',
 		class ISearch extends HTMLElement {
 			constructor() {
 				super();
 				let that = this;
-				this.fullArray = [
-					'Ierger',
-					'Kwefwqf',
-					'Itwfwre',
-					'Hwefwqf',
-					'Lwfw',
-					'Lwgfver',
-					'Oqfqaf',
-					'Iqwerfqarf',
-					'Hqaevgq',
-					'Hqakhjgfjhg',
-				];
+				this.fullArray = [];
 				this._choosenItem = 'default';
 				const onSearchInput = function () {
 					let itemsArray = that.fullArray; // that === ISearch
@@ -144,17 +132,13 @@
 			}
 
 			//Getters and Setters
-
 			getChoosenItem() {
 				return this._choosenItem;
 			}
-
 			setItems(items) {
 				this.fullArray = items;
 			}
 
 		}
 	);
-
-	//window.customElements.define('i-com-sap-sample-isearchsac1', ISearch);
 })();
