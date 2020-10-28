@@ -28,7 +28,13 @@
 
 		"setItems": {
 			"description": "set items list to the widget",
-			"returnType": "string[]"
+			"parameters": [
+				{
+					"name": "items",
+					"type": "string[]",
+					"description": "Items of the widget"
+				}
+			] 
 		}	
 	},
 	"events": {
