@@ -133,9 +133,11 @@
 			}
 
 			onSearchInput(item, itemsArray) {
+				debugger;
 				let matchItems = [];
 				itemsArray.forEach((element) => {
-					if (item && element.startsWith(item)) {
+					let upItem = item.toUpperCase();    
+            		if (upItem && element.toUpperCase().startsWith(upItem)) {
 						matchItems.push(element);
 					}
 				});
@@ -150,16 +152,6 @@
 
 			setItems(items) {
 				this.fullArray = items;
-			}
-
-			get choosenItem() {
-				debugger;
-				return this._choosenItem;
-			}
-
-			set choosenItem(value) {
-				debugger;
-				this._choosenItem = value;
 			}
 
 		}

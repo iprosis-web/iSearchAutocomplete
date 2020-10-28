@@ -97,7 +97,8 @@ class ISearch extends HTMLElement {
     onSearchInput(item, itemsArray) {
         let matchItems = [];
         itemsArray.forEach(element => {
-            if (item && element.startsWith(item)) {
+            let upItem = item.toUpperCase();    
+            if (upItem && element.toUpperCase().startsWith(upItem)) {
                 matchItems.push(element);
             }
         });
