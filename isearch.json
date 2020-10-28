@@ -29,7 +29,12 @@
 			"description": "Returns the item choosen from the search widget",
 			"body": "return this.choosenItem;",
 			"returnType": "string"
+		},
+		"setChoosenItem": {
+			"description": "Sets  the item choosento XXXXXXX",
+			"body": "this.choosenItem = 'XXXXXXX';"
 		}
+		
 	},
 	"events": {
 		"onChooseItem": {

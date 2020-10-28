@@ -78,16 +78,21 @@
 				this.reBuildItemsTable([]);
 			}
 
-			//Getters and Setters
+			//Fired when the widget is added to the html DOM of the page
+			connectedCallback() {}
 
-			get choosenItem() {
-				debugger;
-				return this._choosenItem;
+			//Fired when the widget is removed from the html DOM of the page (e.g. by hide)
+			disconnectedCallback() {}
+
+			//When the custom widget is updated, the Custom Widget SDK framework executes this function first
+			onCustomWidgetBeforeUpdate(oChangedProperties) {}
+
+			//When the custom widget is updated, the Custom Widget SDK framework executes this function after the update
+			onCustomWidgetAfterUpdate(oChangedProperties) {
 			}
 
-			set choosenItem(value) {
-				this._choosenItem = value;
-			}
+			//When the custom widget is removed from the canvas or the analytic application is closed
+			onCustomWidgetDestroy() {}
 
 			reBuildItemsTable(items) {
 				let that = this;
@@ -101,12 +106,11 @@
 
 				// callback on choosen item
 				const onChooseItem = function () {
-					// that === ISearch
+					// that === ISearchs
 					// this === clicked cedll (td)
 					that.shadowRoot.querySelector('.inputSearch').value = this.innerText;
 					that.reBuildItemsTable([]);
 
-					debugger;
 					// Update property
 					that._choosenItem = this.innerText;
 
@@ -136,6 +140,18 @@
 				});
 				this.reBuildItemsTable(matchItems);
 			}
+
+			//Getters and Setters
+
+			get choosenItem() {
+				debugger;
+				return this._choosenItem;
+			}
+
+			set choosenItem(value) {
+				this._choosenItem = value;
+			}
+
 		}
 	);
 
