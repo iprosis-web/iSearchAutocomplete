@@ -106,6 +106,7 @@
 					that.shadowRoot.querySelector('.inputSearch').value = this.innerText;
 					that.reBuildItemsTable([]);
 
+					debugger;
 					// Update property
 					that._choosenItem = this.innerText;
 
