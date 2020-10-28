@@ -65,6 +65,7 @@
 					'Hqaevgq',
 					'Hqakhjgfjhg',
 				];
+				this._choosenItem = 'default';
 				const onSearchInput = function () {
 					let itemsArray = that.fullArray; // that === ISearch
 					let item = this.value; // t5his === input
@@ -82,6 +83,10 @@
 			get choosenItem() {
 				debugger;
 				return this._choosenItem;
+			}
+
+			set choosenItem(value) {
+				this._choosenItem = value;
 			}
 
 			reBuildItemsTable(items) {
