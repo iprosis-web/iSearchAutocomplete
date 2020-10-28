@@ -143,6 +143,10 @@
 
 			//Getters and Setters
 
+			getChoosenItem() {
+				return this._choosenItem;
+			}
+
 			get choosenItem() {
 				debugger;
 				return this._choosenItem;

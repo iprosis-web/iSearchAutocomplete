@@ -27,7 +27,6 @@
 	"methods": {
 		"getChoosenItem": {
 			"description": "Returns the item choosen from the search widget",
-			"body": "return this.choosenItem;",
 			"returnType": "string"
 		},
 		"setChoosenItem": {
