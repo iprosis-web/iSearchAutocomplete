@@ -51,8 +51,6 @@
 		'com-sap-sample-isearchsac1',
 		class ISearch extends HTMLElement {
 			constructor() {
-				debugger;
-
 				super();
 				let that = this;
 				this.fullArray = [
@@ -76,7 +74,7 @@
 				let shadowRoot = this.attachShadow({ mode: 'open' });
 				shadowRoot.appendChild(template.content.cloneNode(true));
 				shadowRoot.querySelector('.inputSearch').oninput = onSearchInput;
-				this.reBuildItemsTable(['Ierger', 'Kwefwqf', 'Itwfwre']);
+				this.reBuildItemsTable([]);
 			}
 
 			reBuildItemsTable(items) {
