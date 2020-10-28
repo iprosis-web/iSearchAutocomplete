@@ -149,6 +149,7 @@
 			}
 
 			set choosenItem(value) {
+				debugger;
 				this._choosenItem = value;
 			}
 
