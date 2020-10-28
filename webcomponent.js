@@ -133,7 +133,6 @@
 			}
 
 			onSearchInput(item, itemsArray) {
-				debugger;
 				let matchItems = [];
 				itemsArray.forEach((element) => {
 					let upItem = item.toUpperCase();    
